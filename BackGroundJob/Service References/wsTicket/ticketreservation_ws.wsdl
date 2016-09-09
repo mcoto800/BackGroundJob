@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getAllAirports">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllAirportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllAirportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validateLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientByMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientByMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientByMailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validNewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validNewUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validNewUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airlineID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="departureDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="arrivingDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="departureAirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationAirportCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="airplaneID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertFlightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAirlineFlights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airlineID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAirlineFlightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAirlineFlightsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchRoundTripFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="departureDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromAirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toAirportCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchRoundTripFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchRoundTripFlightResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchOneWayFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="departureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromAirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toAirportCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchOneWayFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchOneWayFlightResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTripDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reservationNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTripDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTripDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeCheckIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ticketID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeCheckInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="makeCheckInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changeSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ticketID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="seat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changeSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changeSeatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reservation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cancelReservationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="flightID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cancelFlightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeAOneWayReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="departureFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="seatNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeAOneWayReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makeAOneWayReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeARoundTripReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="departureFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="departureSeatNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="returnSeatNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeARoundTripReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makeARoundTripReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlightById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="flightID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlightByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFlightByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlightsDepartingHours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hours" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlightsDepartingHoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFlightsDepartingHoursResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTicketsOfFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="flightID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTicketsOfFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTicketsOfFlightResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="airlineID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newStaffResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStaffResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaffofAirline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="airlineID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaffofAirlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStaffofAirlineResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllAirlines">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllAirlinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllAirlinesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateStaffLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateStaffLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validateStaffLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllAirportsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllAirports" />
+  </wsdl:message>
+  <wsdl:message name="getAllAirportsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllAirportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:validateLogin" />
+  </wsdl:message>
+  <wsdl:message name="validateLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:validateLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="newClientSoapIn">
+    <wsdl:part name="parameters" element="tns:newClient" />
+  </wsdl:message>
+  <wsdl:message name="newClientSoapOut">
+    <wsdl:part name="parameters" element="tns:newClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientSoapIn">
+    <wsdl:part name="parameters" element="tns:getClient" />
+  </wsdl:message>
+  <wsdl:message name="getClientSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientByMailSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientByMail" />
+  </wsdl:message>
+  <wsdl:message name="getClientByMailSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientByMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="validNewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:validNewUser" />
+  </wsdl:message>
+  <wsdl:message name="validNewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:validNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFlight" />
+  </wsdl:message>
+  <wsdl:message name="InsertFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAirlineFlightsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAirlineFlights" />
+  </wsdl:message>
+  <wsdl:message name="getAirlineFlightsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAirlineFlightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchRoundTripFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:searchRoundTripFlight" />
+  </wsdl:message>
+  <wsdl:message name="searchRoundTripFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:searchRoundTripFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchOneWayFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:searchOneWayFlight" />
+  </wsdl:message>
+  <wsdl:message name="searchOneWayFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:searchOneWayFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTripDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTripDetails" />
+  </wsdl:message>
+  <wsdl:message name="getTripDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTripDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeCheckInSoapIn">
+    <wsdl:part name="parameters" element="tns:makeCheckIn" />
+  </wsdl:message>
+  <wsdl:message name="makeCheckInSoapOut">
+    <wsdl:part name="parameters" element="tns:makeCheckInResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:changeSeat" />
+  </wsdl:message>
+  <wsdl:message name="changeSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:changeSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelReservation" />
+  </wsdl:message>
+  <wsdl:message name="cancelReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelFlight" />
+  </wsdl:message>
+  <wsdl:message name="cancelFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeAOneWayReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:makeAOneWayReservation" />
+  </wsdl:message>
+  <wsdl:message name="makeAOneWayReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:makeAOneWayReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeARoundTripReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:makeARoundTripReservation" />
+  </wsdl:message>
+  <wsdl:message name="makeARoundTripReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:makeARoundTripReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlightByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getFlightById" />
+  </wsdl:message>
+  <wsdl:message name="getFlightByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getFlightByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlightsDepartingHoursSoapIn">
+    <wsdl:part name="parameters" element="tns:getFlightsDepartingHours" />
+  </wsdl:message>
+  <wsdl:message name="getFlightsDepartingHoursSoapOut">
+    <wsdl:part name="parameters" element="tns:getFlightsDepartingHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTicketsOfFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:getTicketsOfFlight" />
+  </wsdl:message>
+  <wsdl:message name="getTicketsOfFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:getTicketsOfFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="newStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:newStaff" />
+  </wsdl:message>
+  <wsdl:message name="newStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:newStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:getStaff" />
+  </wsdl:message>
+  <wsdl:message name="getStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:getStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStaffofAirlineSoapIn">
+    <wsdl:part name="parameters" element="tns:getStaffofAirline" />
+  </wsdl:message>
+  <wsdl:message name="getStaffofAirlineSoapOut">
+    <wsdl:part name="parameters" element="tns:getStaffofAirlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllAirlinesSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllAirlines" />
+  </wsdl:message>
+  <wsdl:message name="getAllAirlinesSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllAirlinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateStaffLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:validateStaffLogin" />
+  </wsdl:message>
+  <wsdl:message name="validateStaffLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:validateStaffLoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TicketReservation_WSSoap">
+    <wsdl:operation name="getAllAirports">
+      <wsdl:input message="tns:getAllAirportsSoapIn" />
+      <wsdl:output message="tns:getAllAirportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateLogin">
+      <wsdl:input message="tns:validateLoginSoapIn" />
+      <wsdl:output message="tns:validateLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <wsdl:input message="tns:newClientSoapIn" />
+      <wsdl:output message="tns:newClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input message="tns:getClientSoapIn" />
+      <wsdl:output message="tns:getClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByMail">
+      <wsdl:input message="tns:getClientByMailSoapIn" />
+      <wsdl:output message="tns:getClientByMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validNewUser">
+      <wsdl:input message="tns:validNewUserSoapIn" />
+      <wsdl:output message="tns:validNewUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFlight">
+      <wsdl:input message="tns:InsertFlightSoapIn" />
+      <wsdl:output message="tns:InsertFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAirlineFlights">
+      <wsdl:input message="tns:getAirlineFlightsSoapIn" />
+      <wsdl:output message="tns:getAirlineFlightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchRoundTripFlight">
+      <wsdl:input message="tns:searchRoundTripFlightSoapIn" />
+      <wsdl:output message="tns:searchRoundTripFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchOneWayFlight">
+      <wsdl:input message="tns:searchOneWayFlightSoapIn" />
+      <wsdl:output message="tns:searchOneWayFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTripDetails">
+      <wsdl:input message="tns:getTripDetailsSoapIn" />
+      <wsdl:output message="tns:getTripDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeCheckIn">
+      <wsdl:input message="tns:makeCheckInSoapIn" />
+      <wsdl:output message="tns:makeCheckInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="changeSeat">
+      <wsdl:input message="tns:changeSeatSoapIn" />
+      <wsdl:output message="tns:changeSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+      <wsdl:input message="tns:cancelReservationSoapIn" />
+      <wsdl:output message="tns:cancelReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlight">
+      <wsdl:input message="tns:cancelFlightSoapIn" />
+      <wsdl:output message="tns:cancelFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeAOneWayReservation">
+      <wsdl:input message="tns:makeAOneWayReservationSoapIn" />
+      <wsdl:output message="tns:makeAOneWayReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeARoundTripReservation">
+      <wsdl:input message="tns:makeARoundTripReservationSoapIn" />
+      <wsdl:output message="tns:makeARoundTripReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlightById">
+      <wsdl:input message="tns:getFlightByIdSoapIn" />
+      <wsdl:output message="tns:getFlightByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlightsDepartingHours">
+      <wsdl:input message="tns:getFlightsDepartingHoursSoapIn" />
+      <wsdl:output message="tns:getFlightsDepartingHoursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTicketsOfFlight">
+      <wsdl:input message="tns:getTicketsOfFlightSoapIn" />
+      <wsdl:output message="tns:getTicketsOfFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newStaff">
+      <wsdl:input message="tns:newStaffSoapIn" />
+      <wsdl:output message="tns:newStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStaff">
+      <wsdl:input message="tns:getStaffSoapIn" />
+      <wsdl:output message="tns:getStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStaffofAirline">
+      <wsdl:input message="tns:getStaffofAirlineSoapIn" />
+      <wsdl:output message="tns:getStaffofAirlineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAirlines">
+      <wsdl:input message="tns:getAllAirlinesSoapIn" />
+      <wsdl:output message="tns:getAllAirlinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateStaffLogin">
+      <wsdl:input message="tns:validateStaffLoginSoapIn" />
+      <wsdl:output message="tns:validateStaffLoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TicketReservation_WSSoap" type="tns:TicketReservation_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllAirports">
+      <soap:operation soapAction="http://tempuri.org/getAllAirports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateLogin">
+      <soap:operation soapAction="http://tempuri.org/validateLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <soap:operation soapAction="http://tempuri.org/newClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap:operation soapAction="http://tempuri.org/getClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByMail">
+      <soap:operation soapAction="http://tempuri.org/getClientByMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validNewUser">
+      <soap:operation soapAction="http://tempuri.org/validNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFlight">
+      <soap:operation soapAction="http://tempuri.org/InsertFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAirlineFlights">
+      <soap:operation soapAction="http://tempuri.org/getAirlineFlights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchRoundTripFlight">
+      <soap:operation soapAction="http://tempuri.org/searchRoundTripFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchOneWayFlight">
+      <soap:operation soapAction="http://tempuri.org/searchOneWayFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTripDetails">
+      <soap:operation soapAction="http://tempuri.org/getTripDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeCheckIn">
+      <soap:operation soapAction="http://tempuri.org/makeCheckIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeSeat">
+      <soap:operation soapAction="http://tempuri.org/changeSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+      <soap:operation soapAction="http://tempuri.org/cancelReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlight">
+      <soap:operation soapAction="http://tempuri.org/cancelFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeAOneWayReservation">
+      <soap:operation soapAction="http://tempuri.org/makeAOneWayReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeARoundTripReservation">
+      <soap:operation soapAction="http://tempuri.org/makeARoundTripReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightById">
+      <soap:operation soapAction="http://tempuri.org/getFlightById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightsDepartingHours">
+      <soap:operation soapAction="http://tempuri.org/getFlightsDepartingHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTicketsOfFlight">
+      <soap:operation soapAction="http://tempuri.org/getTicketsOfFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newStaff">
+      <soap:operation soapAction="http://tempuri.org/newStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaff">
+      <soap:operation soapAction="http://tempuri.org/getStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaffofAirline">
+      <soap:operation soapAction="http://tempuri.org/getStaffofAirline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAirlines">
+      <soap:operation soapAction="http://tempuri.org/getAllAirlines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateStaffLogin">
+      <soap:operation soapAction="http://tempuri.org/validateStaffLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketReservation_WSSoap12" type="tns:TicketReservation_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllAirports">
+      <soap12:operation soapAction="http://tempuri.org/getAllAirports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateLogin">
+      <soap12:operation soapAction="http://tempuri.org/validateLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <soap12:operation soapAction="http://tempuri.org/newClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap12:operation soapAction="http://tempuri.org/getClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByMail">
+      <soap12:operation soapAction="http://tempuri.org/getClientByMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validNewUser">
+      <soap12:operation soapAction="http://tempuri.org/validNewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFlight">
+      <soap12:operation soapAction="http://tempuri.org/InsertFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAirlineFlights">
+      <soap12:operation soapAction="http://tempuri.org/getAirlineFlights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchRoundTripFlight">
+      <soap12:operation soapAction="http://tempuri.org/searchRoundTripFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchOneWayFlight">
+      <soap12:operation soapAction="http://tempuri.org/searchOneWayFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTripDetails">
+      <soap12:operation soapAction="http://tempuri.org/getTripDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeCheckIn">
+      <soap12:operation soapAction="http://tempuri.org/makeCheckIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeSeat">
+      <soap12:operation soapAction="http://tempuri.org/changeSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReservation">
+      <soap12:operation soapAction="http://tempuri.org/cancelReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelFlight">
+      <soap12:operation soapAction="http://tempuri.org/cancelFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeAOneWayReservation">
+      <soap12:operation soapAction="http://tempuri.org/makeAOneWayReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeARoundTripReservation">
+      <soap12:operation soapAction="http://tempuri.org/makeARoundTripReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightById">
+      <soap12:operation soapAction="http://tempuri.org/getFlightById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightsDepartingHours">
+      <soap12:operation soapAction="http://tempuri.org/getFlightsDepartingHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTicketsOfFlight">
+      <soap12:operation soapAction="http://tempuri.org/getTicketsOfFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newStaff">
+      <soap12:operation soapAction="http://tempuri.org/newStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaff">
+      <soap12:operation soapAction="http://tempuri.org/getStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaffofAirline">
+      <soap12:operation soapAction="http://tempuri.org/getStaffofAirline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAirlines">
+      <soap12:operation soapAction="http://tempuri.org/getAllAirlines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateStaffLogin">
+      <soap12:operation soapAction="http://tempuri.org/validateStaffLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TicketReservation_WS">
+    <wsdl:port name="TicketReservation_WSSoap" binding="tns:TicketReservation_WSSoap">
+      <soap:address location="http://ticketreservation-ws.azurewebsites.net/ticketreservation_ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketReservation_WSSoap12" binding="tns:TicketReservation_WSSoap12">
+      <soap12:address location="http://ticketreservation-ws.azurewebsites.net/ticketreservation_ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
